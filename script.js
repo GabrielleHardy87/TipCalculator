@@ -16,7 +16,3 @@ if (qualserv === "") {
 if (qualserv === "") {
   return billAmount * QOS3
 }
-
-<script>
-  
-</script>
