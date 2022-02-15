@@ -10,30 +10,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    
+<div id="container">
     <h1>Tip Calculator</h1>
 
-<!--Calculator Layout-->        
+<div id="tipcalculator">
+
 <form>
-    <label for="billamount">Total Amount of Bill?</label><br>
-    <input type="text" id="billamount" name="billamount"><br><br><br>
-    <label for="qualityofsvc">Quality of Service?</label> <br>
-    <input type="checkbox" id="QOS1" name="Meh" value="15%">
-    <label for="QOS1">15% - It was "Meh"</label><br>
-    <input type="checkbox" id="QOS2" name="Yummy" value="18%">
-    <label for="QOS2">18% - It was "Yummy"</label><br>
-    <input type="checkbox" id="QOS3" name="Awesome" value="20%">
-    <label for="QOS3">20% - It was "Awesome Sauce"</label><br><br>
-    <label for="splitamount">Let's Split The Tip</label><br>
-    <input type="text" id="splitamount" value="enter # of people">
+  
+<p>Total Amount of Bill?</p>
+    $ <input  type="text" id="billamt" placeholder="Bill Amount">
+
+<p>Quality of Service</p>
+    <select id="qualofsvc">
+
+<option value="0.00">0% - "It Was Trash"</option>
+<option value="0.15">15% - "It Was Meh"</option>
+<option value="0.18">18% - "It Was Yummy"</option>
+<option value="0.20">20% - "It Was Awesome Sauce"</option>
+
+    </select>
+
 </form>
-<br><br>
-<button type="button">Calculate Tip Amount</button>
+
+<p>Let's Split The Tip</p>
+<input  type="text" id="splitamt" placeholder="# of people">
+
+<button type="button" id="caltip">Calculate Tip Amount</button>
+
+</div>
 
 <!--Calculator End of Layout-->
+<div id="totaltipamt">
 
+<p>Total</p>
 
+<sup>$</sup>
+<span id="tipamt">0.00</span>
+<small id="perperson">Per Person</small>
+
+</div>
+    <!--Javascript-->
+    <script src="script.js"></script>
+
+</body>
+</html>
 
 
 
