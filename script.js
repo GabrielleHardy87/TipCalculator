@@ -1,20 +1,30 @@
-function calculateTip () {
-let bill = document.getElementById("billAmount").value;
-let qualserv1 = document.getElementById("QOS1").value;
-let qualserv2 = document.getElementById("QOS2").value;
-let qualserv3 = document.getElementById("QOS3").value;
+function calculateTip() {
+  let billAmt = document.getElementById("billamt").value;
+  let qualofsvc = document.getElementById("qualofsvc").value;
+  let letssplit = document.getElementById("splitamt").value;
+
+  //calculate functions
+if (letssplit === "" || letssplit <= 1) {
+  letssplit = 1; document.getElementById("perperson").style.display = "none";
+} else {
+  document.getElementById("perperson").style.display ="block";
 }
 
-if (billAmount === "" || qualserv == 0) {
-  alert("please enter values");
-  return;
-}
+let total = (billAmt * qualofsvc) / letssplit;
 
-if (qualserv === "") {
-    return billAmount * QOS2
-    }
+total = Math.round(total * 100) / 100;
 
-if (qualserv === "") {
-  return billAmount * QOS3
-}
+total = total.toFixed(2);
+
+//Tip Display
+document.getElementById("totaltipamt").style.display ="block";
+document.getElementById("tipamt").innerHTML = total;  
+
+};
+
+//Click Button Function
+document.getElementById("caltip").onclick = function() {
+  calculateTip();
+
+};
 
